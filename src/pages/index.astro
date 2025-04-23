@@ -1,11 +1,68 @@
 ---
-import Welcome from '../components/Welcome.astro';
+import Badge from '../components/Badge.astro';
 import Layout from '../layouts/Layout.astro';
+import Logo from "../components/Logo.astro"
+import GitHubIcon from '../icons/GitHubIcon.astro';
+import LinkedInIcon from '../icons/LinkedInIcon.astro';
+import SocialPill from '../components/SocialPill.astro';
+import MailIcon from '../icons/MailIcon.astro';
+import Experience from '../components/Experience.astro';
+import BriefCase from '../icons/BriefCase.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout title='Portfolio'>
+	<main class="p-3 lg:p-5 lg:my-5 text-center">
+		<section class="flex flex-col items-center w-full">	
+			<Logo clases='my-6'/>
+			<article class="flex flex-wrap justify-center items-center gap-x-2.5 md:gap-y-0 gap-y-3">
+				<h1 class="text-2xl xl:text-3xl">Hola, Soy Octavio</h1>
+				<a 
+					href="https://www.linkedin.com/in/octavio-ferreyra-42b101247/"
+					target="_blank"
+					rel="noopener noreferrer"
+					class=""
+				>
+				<Badge>Disponible para trabajar</Badge>
+				</a>
+			</article>
+			<article class="opacity-80 p-5 md:px-50 lg:px-80">	
+
+				<p class=" md:text-lg text-balance">
+					Soy un <span class="text-blue-300">desarrollador web</span>  apasionado por crear experiencias digitales únicas y funcionales. 
+					Tengo experiencia en tecnologías modernas como <span class="text-yellow-200">JavaScript, React, y Astro. </span>
+					Me encanta resolver problemas y aprender nuevas herramientas para mejorar mis habilidades.
+				</p>
+			
+				<p class="mt-2 md:text-lg text-balance">
+					En mi tiempo libre, disfruto explorar nuevas tecnologías, contribuir a proyectos de código abierto, 
+					y compartir conocimientos con la comunidad de desarrolladores.
+				</p>
+			</article>
+			<nav>
+				<ul class="flex gap-4 mt-6 justify-center border-white/10 border-t-2 pt-4 flex-wrap">
+					<SocialPill href="https://www.linkedin.com/in/octavio-ferreyra-42b101247/">
+						<LinkedInIcon class="size-4 md:size-6 " />
+						LinkedIn
+					</SocialPill>
+					<SocialPill href="https://github.com/Ferchovich">
+						<GitHubIcon class="size-4  md:size-6" />
+						GitHub
+					</SocialPill>
+					<SocialPill>
+						<MailIcon class="size-4 md:size-6" />
+						ferreyraoctavio6@gmail.com
+					</SocialPill>
+				</ul>
+			</na>
+		</section>
+		<section id="experiencia" class="p-16 md:px-40 lg:px-60 xl:px-100 mt-10 w-full flex flex-col items-center">
+			
+			<h2 class="font-semibold my-5 rounded-3xl flex gap-x-2 md:gap-x-3 lg-gap-x-4 items-center text-xl md:text-2xl lg:text-3xl text-neutral-200">
+				<BriefCase class="size-15 md:size-8 lg:size-9	 "/>
+				Mi Experiencia Laboral
+			</h2>
+			<Experience />
+		</section>
+	</main>
 </Layout>

@@ -1,0 +1,57 @@
+---
+import Pill from "./Pill.astro";
+import NextIcon from "../icons/NextIcon.astro";
+import ReactIcon from "../icons/ReactIcon.astro";
+import TailwindIcon from "../icons/TailwindIcon.astro";
+import TypescriptIcon from "../icons/TypescriptIcon.astro";
+
+const TAGS = {
+  NEXT: {
+    name: "Next.js",
+    icon: NextIcon
+  },
+  REACT: {
+    name: "React",
+    icon: ReactIcon 
+  },
+  TAILWIND: {
+      name: "TailwindCSS",
+      icon: TailwindIcon
+    },
+  TYPESCRIPT: {
+    name: "TypeScript",
+    icon: TypescriptIcon
+  }
+}
+const PROJECTS = [
+  {
+    title: "Proyecto DownIsUp",
+    description: "Un proyecto de gestión de tareas de un fundacion sin fines de lucro para personas con Sindrome de Down.",
+    tags: [TAGS.REACT, TAGS.NEXT, TAGS.TYPESCRIPT, TAGS.TAILWIND],
+    url: "https://downisupcba.org/",
+    link: "https://github.com/TomiAltero/downisup",
+    image: "downisup.webp",
+  },
+];
+---
+
+{
+    PROJECTS.map(({title, description, tags, url, link, image}) => {
+        return <article>
+            <h3 class="font-semibold text-2xl text-yellow-200 mb-2">
+               {title} 
+            </h3>
+            <p class="text-xl text-pretty mb-4">{description}</p>
+            <img class="rounded shadow-2xl shadow-white/10"src={image} alt={image} class="rounded-3xl" />
+            <ul class="flex justify-center items-center flex-wrap gap-x-4 gap-y-2 mt-4">
+                {tags.map(tag => {
+                  return (<Pill>
+                    <tag.icon class="size-4 md:size-6"/>
+
+                    {tag.name}
+                  </Pill>)}
+                )}
+            </ul>
+        </article>
+    })
+}

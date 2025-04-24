@@ -1,8 +1,2 @@
----
-interface Props {
-    class?: string;
-}
-const { class: clases } = Astro.props as Props;
----
 
-<img src="foto.jpg" alt="fercho foto" class={`size-25 m-5 md:size-30 rounded-full object-cover [image-rendering:crisp-edges]  ${clases}`} >
+<img src="foto.jpg" alt="fercho foto" class='size-25 m-5 md:size-30 rounded-full object-cover [image-rendering:crisp-edges]' {...Astro.props}>

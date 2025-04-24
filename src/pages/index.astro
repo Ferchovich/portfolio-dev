@@ -4,17 +4,19 @@ import Layout from '../layouts/Layout.astro';
 import Logo from "../components/Logo.astro"
 import GitHubIcon from '../icons/GitHubIcon.astro';
 import LinkedInIcon from '../icons/LinkedInIcon.astro';
-import SocialPill from '../components/SocialPill.astro';
+import Pill from '../components/Pill.astro';
 import MailIcon from '../icons/MailIcon.astro';
 import Experience from '../components/Experience.astro';
 import BriefCase from '../icons/BriefCase.astro';
+import CodeIcon from '../icons/CodeIcon.astro';
+import Projects from '../components/Projects.astro';
 
 ---
 
 <Layout title='Portfolio'>
 	<main class="p-3 lg:p-5 lg:my-5 text-center">
 		<section class="flex flex-col items-center w-full">	
-			<Logo clases='my-6'/>
+			<Logo class='my-6'/>
 			<article class="flex flex-wrap justify-center items-center gap-x-2.5 md:gap-y-0 gap-y-3">
 				<h1 class="text-2xl xl:text-3xl">Hola, Soy Octavio</h1>
 				<a 
@@ -41,18 +43,18 @@ import BriefCase from '../icons/BriefCase.astro';
 			</article>
 			<nav>
 				<ul class="flex gap-4 mt-6 justify-center border-white/10 border-t-2 pt-4 flex-wrap">
-					<SocialPill href="https://www.linkedin.com/in/octavio-ferreyra-42b101247/">
+					<Pill href="https://www.linkedin.com/in/octavio-ferreyra-42b101247/">
 						<LinkedInIcon class="size-4 md:size-6 " />
 						LinkedIn
-					</SocialPill>
-					<SocialPill href="https://github.com/Ferchovich">
+					</Pill>
+					<Pill href="https://github.com/Ferchovich">
 						<GitHubIcon class="size-4  md:size-6" />
 						GitHub
-					</SocialPill>
-					<SocialPill>
+					</Pill>
+					<Pill>
 						<MailIcon class="size-4 md:size-6" />
 						ferreyraoctavio6@gmail.com
-					</SocialPill>
+					</Pill>
 				</ul>
 			</na>
 		</section>
@@ -63,6 +65,13 @@ import BriefCase from '../icons/BriefCase.astro';
 				Mi Experiencia Laboral
 			</h2>
 			<Experience />
+		</section>
+		<section id="proyectos" class="p-12 md:px-40 lg:px-60 xl:px-100 w-full flex flex-col items-center">
+			<h2 class="font-semibold my-5 rounded-3xl flex gap-x-2 md:gap-x-3 lg-gap-x-4 items-center text-xl md:text-2xl lg:text-3xl text-neutral-200">
+				<CodeIcon class="size-15 md:size-8 lg:size-9"/>
+				Mis Proyectos
+			</h2>
+			<Projects />
 		</section>
 	</main>
 </Layout>
